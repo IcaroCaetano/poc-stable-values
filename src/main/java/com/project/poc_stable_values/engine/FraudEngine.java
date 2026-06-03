@@ -1,6 +1,8 @@
 package com.project.poc_stable_values.engine;
 
 
+import com.project.poc_stable_values.security.JwtPublicKey;
+
 public class FraudEngine {
 
     private final StableValue<FaceMatchModel> faceMatchModel =
