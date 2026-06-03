@@ -4,5 +4,4 @@ public record FraudAnalysisRequest(
         String cpf,
         String selfieBase64,
         String documentBase64
-) {
-}
+) { }
