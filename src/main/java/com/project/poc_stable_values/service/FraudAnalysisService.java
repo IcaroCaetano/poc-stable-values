@@ -1,31 +1,36 @@
 package com.project.poc_stable_values.service;
 
+import com.project.poc_stable_values.domain.FraudAnalysis;
 import com.project.poc_stable_values.dto.FraudAnalysisRequest;
+import com.project.poc_stable_values.engine.FraudEngine;
 
 public class FraudAnalysisService {
 
-    public void analyze(FraudAnalysisRequest request) {
+    private final FraudEngine fraudEngine =
+            new FraudEngine();
 
-        var faceMatch =
-                new FaceMatchAnalysis(
-                        request.cpf(),
-                        request.personName(),
-                        request.source(),
-                        request.faceMatchScore());
+    public FraudAnalysis analyze(
+            FraudAnalysisRequest request) {
 
-        var liveness =
-                new LivenessAnalysis(
-                        request.cpf(),
-                        request.personName(),
-                        request.source(),
-                        request.livenessScore());
+        var faceMatchModel =
+                fraudEngine.faceMatchModel();
 
-        System.out.println(
-                "Face Match Score: "
-                        + faceMatch.getFaceMatchScore());
+        var livenessModel =
+                fraudEngine.livenessModel();
 
-        System.out.println(
-                "Liveness Score: "
-                        + liveness.getLivenessScore());
+        double faceMatchScore =
+                faceMatchModel.analyze(
+                        request.selfieBase64(),
+                        request.documentBase64());
+
+        double livenessScore =
+                livenessModel.analyze(
+                        request.selfieBase64());
+
+        return new FraudAnalysis(
+                request.cpf(),
+                faceMatchScore,
+                livenessScore
+        );
     }
 }
