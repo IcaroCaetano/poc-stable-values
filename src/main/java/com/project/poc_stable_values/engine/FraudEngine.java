@@ -12,23 +12,17 @@ public class FraudEngine {
 
     public FaceMatchModel faceMatchModel() {
 
-        return faceMatchModel.orElseSet(
-                this::loadFaceMatchModel
-        );
+        return faceMatchModel.orElseSet(this::loadFaceMatchModel);
     }
 
     public LivenessModel livenessModel() {
 
-        return livenessModel.orElseSet(
-                this::loadLivenessModel
-        );
+        return livenessModel.orElseSet(this::loadLivenessModel);
     }
 
     public JwtPublicKey jwtPublicKey() {
 
-        return jwtPublicKey.orElseSet(
-                this::loadJwtPublicKey
-        );
+        return jwtPublicKey.orElseSet(this::loadJwtPublicKey);
     }
 
     private FaceMatchModel loadFaceMatchModel() {
