@@ -14,22 +14,23 @@ public class FraudEngine {
             StableValue.of(this::loadJwtPublicKey);
 
     public FaceMatchModel faceMatchModel() {
+
         return faceMatchModel.get();
     }
 
     public LivenessModel livenessModel() {
+
         return livenessModel.get();
     }
 
     public JwtPublicKey jwtPublicKey() {
+
         return jwtPublicKey.get();
     }
 
     private FaceMatchModel loadFaceMatchModel() {
 
-        System.out.println(
-                "Loading Face Match Model..."
-        );
+        System.out.println("Loading Face Match Model...");
 
         sleep();
 
@@ -38,9 +39,7 @@ public class FraudEngine {
 
     private LivenessModel loadLivenessModel() {
 
-        System.out.println(
-                "Loading Liveness Model..."
-        );
+        System.out.println("Loading Liveness Model...");
 
         sleep();
 
@@ -55,10 +54,7 @@ public class FraudEngine {
 
         sleep();
 
-        return new JwtPublicKey(
-                "kid-001",
-                "PUBLIC_KEY_CONTENT"
-        );
+        return new JwtPublicKey("kid-001", "PUBLIC_KEY_CONTENT");
     }
 
     private void sleep() {
