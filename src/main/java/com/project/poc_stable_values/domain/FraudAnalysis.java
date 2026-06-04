@@ -12,8 +12,7 @@ public class FraudAnalysis {
     private final FraudStatus status;
     private final Instant createdAt;
 
-    public FraudAnalysis(
-            String cpf,
+    public FraudAnalysis(String cpf,
             double faceMatchScore,
             double livenessScore) {
 
@@ -21,10 +20,7 @@ public class FraudAnalysis {
         this.cpf = cpf;
         this.faceMatchScore = faceMatchScore;
         this.livenessScore = livenessScore;
-        this.status = determineStatus(
-                faceMatchScore,
-                livenessScore
-        );
+        this.status = determineStatus(faceMatchScore, livenessScore);
         this.createdAt = Instant.now();
     }
 
@@ -32,13 +28,11 @@ public class FraudAnalysis {
             double faceMatchScore,
             double livenessScore) {
 
-        if (faceMatchScore >= 90 &&
-                livenessScore >= 90) {
+        if (faceMatchScore >= 90 && livenessScore >= 90) {
             return FraudStatus.APPROVED;
         }
 
-        if (faceMatchScore >= 70 &&
-                livenessScore >= 70) {
+        if (faceMatchScore >= 70 && livenessScore >= 70) {
             return FraudStatus.MANUAL_REVIEW;
         }
 
@@ -46,26 +40,32 @@ public class FraudAnalysis {
     }
 
     public String getAnalysisId() {
+
         return analysisId;
     }
 
     public String getCpf() {
+
         return cpf;
     }
 
     public double getFaceMatchScore() {
+
         return faceMatchScore;
     }
 
     public double getLivenessScore() {
+
         return livenessScore;
     }
 
     public FraudStatus getStatus() {
+
         return status;
     }
 
     public Instant getCreatedAt() {
+
         return createdAt;
     }
 

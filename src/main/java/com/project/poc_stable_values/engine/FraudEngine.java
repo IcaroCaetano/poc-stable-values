@@ -4,28 +4,31 @@ import com.project.poc_stable_values.security.JwtPublicKey;
 
 public class FraudEngine {
 
-    private final StableValue<FaceMatchModel> faceMatchModel =
-            StableValue.of(this::loadFaceMatchModel);
+    private final StableValue<FaceMatchModel> faceMatchModel = StableValue.of();
 
-    private final StableValue<LivenessModel> livenessModel =
-            StableValue.of(this::loadLivenessModel);
+    private final StableValue<LivenessModel> livenessModel = StableValue.of();
 
-    private final StableValue<JwtPublicKey> jwtPublicKey =
-            StableValue.of(this::loadJwtPublicKey);
+    private final StableValue<JwtPublicKey> jwtPublicKey = StableValue.of();
 
     public FaceMatchModel faceMatchModel() {
 
-        return faceMatchModel.get();
+        return faceMatchModel.orElseSet(
+                this::loadFaceMatchModel
+        );
     }
 
     public LivenessModel livenessModel() {
 
-        return livenessModel.get();
+        return livenessModel.orElseSet(
+                this::loadLivenessModel
+        );
     }
 
     public JwtPublicKey jwtPublicKey() {
 
-        return jwtPublicKey.get();
+        return jwtPublicKey.orElseSet(
+                this::loadJwtPublicKey
+        );
     }
 
     private FaceMatchModel loadFaceMatchModel() {
@@ -54,7 +57,10 @@ public class FraudEngine {
 
         sleep();
 
-        return new JwtPublicKey("kid-001", "PUBLIC_KEY_CONTENT");
+        return new JwtPublicKey(
+                "kid-001",
+                "PUBLIC_KEY_CONTENT"
+        );
     }
 
     private void sleep() {
