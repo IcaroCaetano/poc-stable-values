@@ -10,3 +10,14 @@ Um valor que será definido uma única vez, de forma thread-safe, e depois perma
 private final StableValue<FraudModel> model =
         StableValue.of();
 ```
+
+e
+
+```
+public FraudModel getModel() {
+
+    return model.orElseSet(
+            this::loadModel
+    );
+}
+```
