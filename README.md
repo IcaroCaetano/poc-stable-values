@@ -21,3 +21,13 @@ public FraudModel getModel() {
     );
 }
 ```
+
+A semântica é:
+
+```
+Ainda não existe valor?
+    cria
+
+Já existe?
+    reutiliza
+```
