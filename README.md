@@ -31,3 +31,13 @@ Ainda não existe valor?
 Já existe?
     reutiliza
 ```
+
+### Por que não usar simplesmente final?
+
+
+Imagine:
+
+```
+private final FraudModel model =
+        loadModel();
+```
