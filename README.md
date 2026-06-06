@@ -41,3 +41,8 @@ Imagine:
 private final FraudModel model =
         loadModel();
 ```
+
+O modelo é criado no startup.
+Mesmo que nunca seja utilizado.
+
+### Já com Stable Value:
