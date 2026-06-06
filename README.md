@@ -51,3 +51,5 @@ Mesmo que nunca seja utilizado.
 private final StableValue<FraudModel> model =
         StableValue.of();
 ```
+
+O modelo só será criado quando alguém realmente precisar dele.
