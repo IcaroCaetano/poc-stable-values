@@ -46,3 +46,8 @@ O modelo é criado no startup.
 Mesmo que nunca seja utilizado.
 
 ### Já com Stable Value:
+
+```
+private final StableValue<FraudModel> model =
+        StableValue.of();
+```
