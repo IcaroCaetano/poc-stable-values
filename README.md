@@ -67,3 +67,11 @@ Mesmo que 100 threads façam:
 ```
 model.orElseSet(...)
 ```
+
+ao mesmo tempo.
+
+Somente uma thread executará:
+
+```
+loadModel()
+```
