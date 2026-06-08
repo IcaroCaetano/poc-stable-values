@@ -64,3 +64,6 @@ O Java não criou Stable Values apenas para lazy loading.
 
 Mesmo que 100 threads façam:
 
+```
+model.orElseSet(...)
+```
