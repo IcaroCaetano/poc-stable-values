@@ -53,3 +53,14 @@ private final StableValue<FraudModel> model =
 ```
 
 O modelo só será criado quando alguém realmente precisar dele.
+
+
+O Java não criou Stable Values apenas para lazy loading.
+
+
+#### O objetivo é garantir:
+
+1. Computação única
+
+Mesmo que 100 threads façam:
+
