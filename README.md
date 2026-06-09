@@ -76,7 +76,7 @@ Somente uma thread executará:
 loadModel()
 ```
 
-#### Publicação segura
+#### 2 - Publicação segura
 
 Depois que o valor é criado:
 
@@ -101,6 +101,9 @@ synchronized
 ```
 Lock
 ```
+
+3. Imutabilidade lógica
+Após definido:
 
 ## Objetivo de uso
 
