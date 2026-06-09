@@ -88,3 +88,12 @@ FraudModel model
 todas as threads enxergam exatamente a mesma instância.
 
 Sem:
+
+```
+volatile
+```
+
+
+```
+synchronized
+```
