@@ -101,3 +101,15 @@ synchronized
 ```
 Lock
 ```
+
+## Objetivo de uso
+
+Todos esses objetos:
+
+- custam caro para carregar;
+
+- são lidos milhares de vezes;
+
+- raramente mudam;
+
+- precisam ser compartilhados por várias threads.
