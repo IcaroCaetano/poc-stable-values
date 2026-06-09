@@ -70,8 +70,21 @@ model.orElseSet(...)
 
 ao mesmo tempo.
 
-Somente uma thread executará:
 
 ```
 loadModel()
 ```
+
+#### Publicação segura
+
+Depois que o valor é criado:
+
+```
+FraudModel model
+```
+
+
+todas as threads enxergam exatamente a mesma instância.
+
+Sem:
+Somente uma thread executará:
