@@ -15,7 +15,8 @@ public class PocStableValuesApplication {
 				new FraudAnalysisRequest(
 						"12345678901",
 						"SELFIE_BASE64",
-						"DOCUMENT_BASE64"
+						"DOCUMENT_BASE64",
+						"eyJhbGciOiJSUzI1NiIsImtpZCI6ImtpZC0wMDEifQ.eyJzdWIiOiIxMjM0NTY3ODkwMSIsIm5hbWUiOiJJY2FybyBDYWV0YW5vIiwiaWF0IjoxNzE1NjAwMDAwfQ.signature"
 				);
 
 		System.out.println("=== First Request ===");
@@ -23,8 +24,6 @@ public class PocStableValuesApplication {
 		service.analyze(request);
 
 		System.out.println(request);
-
-
 
 		System.out.println("=== Second Request ===");
 

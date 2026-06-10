@@ -29,7 +29,7 @@ public class FraudEngine {
 
     private FaceMatchModel loadFaceMatchModel() {
 
-        System.out.println("Loading Face Match Model...");
+        System.out.println("Loading Face Match Model...Thread: " + Thread.currentThread());
 
         sleep();
 
@@ -38,7 +38,7 @@ public class FraudEngine {
 
     private LivenessModel loadLivenessModel() {
 
-        System.out.println("Loading Liveness Model...");
+        System.out.println("Loading Liveness Model...Thread: " + Thread.currentThread());
 
         sleep();
 
@@ -47,16 +47,11 @@ public class FraudEngine {
 
     private JwtPublicKey loadJwtPublicKey() {
 
-        System.out.println(
-                "Loading JWT Public Key..."
-        );
+        System.out.println("Loading JWT Public Key...Thread:" + Thread.currentThread());
 
         sleep();
 
-        return new JwtPublicKey(
-                "kid-001",
-                "PUBLIC_KEY_CONTENT"
-        );
+        return new JwtPublicKey("kid-001", "PUBLIC_KEY_CONTENT");
     }
 
     private void sleep() {
