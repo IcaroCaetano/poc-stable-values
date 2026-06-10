@@ -1,4 +1,4 @@
-package com.project.poc_stable_values.engine;
+package com.project.poc_stable_values.model;
 
 public class LivenessModel {
 
