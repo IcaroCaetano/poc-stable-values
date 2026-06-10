@@ -22,7 +22,9 @@ public class PocStableValuesApplication {
 
 		service.analyze(request);
 
-		System.out.println();
+		System.out.println(request);
+
+
 
 		System.out.println("=== Second Request ===");
 

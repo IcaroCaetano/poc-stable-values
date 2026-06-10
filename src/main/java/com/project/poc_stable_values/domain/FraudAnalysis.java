@@ -24,9 +24,7 @@ public class FraudAnalysis {
         this.createdAt = Instant.now();
     }
 
-    private FraudStatus determineStatus(
-            double faceMatchScore,
-            double livenessScore) {
+    private FraudStatus determineStatus(double faceMatchScore, double livenessScore) {
 
         if (faceMatchScore >= 90 && livenessScore >= 90) {
             return FraudStatus.APPROVED;
