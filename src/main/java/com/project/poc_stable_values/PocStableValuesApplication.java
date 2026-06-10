@@ -21,13 +21,17 @@ public class PocStableValuesApplication {
 
 		System.out.println("=== First Request ===");
 
-		service.analyze(request);
+		var response1 = service.analyze(request);
 
-		System.out.println(request);
+		System.out.println(response1);
+
+		System.out.println();
 
 		System.out.println("=== Second Request ===");
 
-		service.analyze(request);
+		var response2 = service.analyze(request);
+
+		System.out.println(response2);
 	}
 
 }
