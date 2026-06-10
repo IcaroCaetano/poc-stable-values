@@ -4,6 +4,44 @@ A ideia central:
 
 Um valor que será definido uma única vez, de forma thread-safe, e depois permanecerá imutável e compartilhável para sempre.
 
+
+## Estrutura
+
+````
+└───src
+    ├───main
+        ├───java
+          └───com
+              └───project
+                  └───poc_stable_values
+                      │   PocStableValuesApplication.java
+                      │   
+                      ├───api
+                      │   └───response
+                      │           FraudAnalysisResult.java
+                      │           
+                      ├───domain
+                      │       FraudAnalysis.java
+                      │       FraudStatus.java
+                      │       
+                      ├───dto
+                      │       FraudAnalysisRequest.java
+                      │       
+                      ├───engine
+                      │       FraudEngine.java
+                      │       
+                      ├───model
+                      │       FaceMatchModel.java
+                      │       LivenessModel.java
+                      │       
+                      ├───security
+                      │       JwtPublicKey.java
+                      │       JwtValidator.java
+                      │       
+                      └───service
+                               FraudAnalysisService.java
+````
+
 ## O conceito de Stable Value
 
 ```
