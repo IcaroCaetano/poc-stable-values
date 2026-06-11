@@ -154,3 +154,34 @@ Todos esses objetos:
 - raramente mudam;
 
 - precisam ser compartilhados por várias threads.
+
+
+### Output
+
+````text
+=== First Request ===
+Loading Face Match Model...Thread: Thread[#3,main,5,main]
+Loading Liveness Model...Thread: Thread[#3,main,5,main]
+Loading JWT Public Key...Thread:Thread[#3,main,5,main]
+Validating JWT using key kid-001 Token eyJhbGciOiJSUzI1NiIsImtpZCI6ImtpZC0wMDEifQ.eyJzdWIiOiIxMjM0NTY3ODkwMSIsIm5hbWUiOiJJY2FybyBDYWV0YW5vIiwiaWF0IjoxNzE1NjAwMDAwfQ.signature
+FraudAnalysis{
+    analysisId='f7913d70-afe6-4466-9814-61904c37d4a0',
+    cpf='12345678901',
+    faceMatchScore=70,61,
+    livenessScore=89,09,
+    status=MANUAL_REVIEW,
+    createdAt=2026-06-11T01:39:32.618494900Z
+}
+
+
+=== Second Request ===
+Validating JWT using key kid-001 Token eyJhbGciOiJSUzI1NiIsImtpZCI6ImtpZC0wMDEifQ.eyJzdWIiOiIxMjM0NTY3ODkwMSIsIm5hbWUiOiJJY2FybyBDYWV0YW5vIiwiaWF0IjoxNzE1NjAwMDAwfQ.signature
+FraudAnalysis{
+    analysisId='847cd0e5-b8df-466e-a37d-5c3b08f89c55',
+    cpf='12345678901',
+    faceMatchScore=94,83,
+    livenessScore=77,33,
+    status=MANUAL_REVIEW,
+    createdAt=2026-06-11T01:39:32.640706Z
+}
+````
