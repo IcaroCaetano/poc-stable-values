@@ -1,11 +1,10 @@
 # poc-stable-values
 
-A ideia central:
+The central idea:
 
-Um valor que será definido uma única vez, de forma thread-safe, e depois permanecerá imutável e compartilhável para sempre.
+A value that will be defined only once, in a thread-safe manner, and then remain immutable and shareable forever.
 
-
-## Estrutura
+## Structure
 
 ````
 └───src
@@ -42,7 +41,7 @@ Um valor que será definido uma única vez, de forma thread-safe, e depois perma
                                FraudAnalysisService.java
 ````
 
-## O conceito de Stable Value
+## The concept of Stable Value
 
 ```
 private final StableValue<FraudModel> model =
