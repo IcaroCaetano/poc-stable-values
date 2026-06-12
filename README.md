@@ -119,9 +119,9 @@ FraudModel model
 ```
 
 
-todas as threads enxergam exatamente a mesma instância.
+All threads see exactly the same instance.
 
-Sem:
+Without:
 
 ```
 volatile
@@ -136,20 +136,20 @@ synchronized
 Lock
 ```
 
-3. Imutabilidade lógica
-Após definido:
+3. Logical Immutability
+After being defined:
 
-## Objetivo de uso
+## Purpose of use
 
-Todos esses objetos:
+All these objects:
 
-- custam caro para carregar;
+- They are expensive to upload;
 
-- são lidos milhares de vezes;
+- They are read thousands of times;
 
-- raramente mudam;
+- They rarely change;
 
-- precisam ser compartilhados por várias threads.
+- They need to be shared across multiple threads.
 
 
 ### Output
