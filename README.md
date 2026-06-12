@@ -44,11 +44,10 @@ A value that will be defined only once, in a thread-safe manner, and then remain
 ## The concept of Stable Value
 
 ```
-private final StableValue<FraudModel> model =
-        StableValue.of();
+private final StableValue<FraudModel> model = StableValue.of();
 ```
 
-e
+and
 
 ```
 public FraudModel getModel() {
@@ -59,18 +58,18 @@ public FraudModel getModel() {
 }
 ```
 
-A semântica é:
+The semantics are:
 
 ```
-Ainda não existe valor?
-    cria
+Does it not yet exist in value?
 
-Já existe?
-    reutiliza
+Create it.
+
+Does it already exist?
+Reuse it.
 ```
 
-### Por que não usar simplesmente final?
-
+Why not just use "final"?
 
 Imagine:
 
@@ -79,10 +78,11 @@ private final FraudModel model =
         loadModel();
 ```
 
-O modelo é criado no startup.
-Mesmo que nunca seja utilizado.
+The model is created in the startup.
 
-### Já com Stable Value:
+Even if it is never used.
+
+### Already with Stable Value:
 
 ```
 private final StableValue<FraudModel> model =
