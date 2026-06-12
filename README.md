@@ -103,17 +103,16 @@ Even if 100 threads perform:
 model.orElseSet(...)
 ```
 
-ao mesmo tempo.
+At the same time.
 
-
-Somente uma thread executará:
+Only one thread will execute:
 ```
 loadModel()
 ```
 
-#### 2 - Publicação segura
+#### 2 - Secure Publishing
 
-Depois que o valor é criado:
+After the value is created:
 
 ```
 FraudModel model
