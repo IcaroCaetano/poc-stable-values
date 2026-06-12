@@ -74,8 +74,7 @@ Why not just use "final"?
 Imagine:
 
 ```
-private final FraudModel model =
-        loadModel();
+private final FraudModel model = loadModel();
 ```
 
 The model is created in the startup.
@@ -85,21 +84,20 @@ Even if it is never used.
 ### Already with Stable Value:
 
 ```
-private final StableValue<FraudModel> model =
-        StableValue.of();
+private final StableValue<FraudModel> model = StableValue.of();
 ```
 
-O modelo só será criado quando alguém realmente precisar dele.
+
+The model will only be created when someone actually needs it.
+
+Java didn't create Stable Values ​​just for lazy loading.
 
 
-O Java não criou Stable Values apenas para lazy loading.
+### The goal is to guarantee:
 
+1. Unique computation
 
-#### O objetivo é garantir:
-
-1. Computação única
-
-Mesmo que 100 threads façam:
+Even if 100 threads perform:
 
 ```
 model.orElseSet(...)
