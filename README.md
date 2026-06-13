@@ -4,6 +4,11 @@ The central idea:
 
 A value that will be defined only once, in a thread-safe manner, and then remain immutable and shareable forever.
 
+
+# Objective
+
+Allow lazy initialization of a value, ensuring that it is created only once, in a thread-safe manner, and with safe publication to all threads.
+
 ## Structure
 
 ````
