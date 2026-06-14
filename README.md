@@ -5,9 +5,17 @@ The central idea:
 A value that will be defined only once, in a thread-safe manner, and then remain immutable and shareable forever.
 
 
-# Objective
+## Objective
 
 Allow lazy initialization of a value, ensuring that it is created only once, in a thread-safe manner, and with safe publication to all threads.
+
+
+## The JVM guarantees that:
+
+- only one thread will execute loadModel();
+- all other threads will receive the same instance;
+- the value will be visible to all threads;
+- the value will never be overwritten.
 
 ## Structure
 
