@@ -16,6 +16,8 @@ Allow lazy initialization of a value, ensuring that it is created only once, in 
 - all other threads will receive the same instance;
 - the value will be visible to all threads;
 - the value will never be overwritten.
+- Eliminates complex code with volatile and synchronized.
+- Allows the JVM to optimize immutable values ​​after initialization.
 
 ## Structure
 
